@@ -142,7 +142,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     url = normalize_url(args.target.strip())
     try:
         headers, cookies, body, final_url = fetch(url, args.timeout)
-    except Exception as exc:  # noqa: BLE001 - report any fetch failure cleanly
+    except Exception as exc:  # noqa: BLE001
         print(f"error: could not fetch {url}: {exc}", file=sys.stderr)
         return 2
 
